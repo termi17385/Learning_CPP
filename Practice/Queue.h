@@ -10,6 +10,12 @@
 || This is a variant of a linked list, 
 || used to create a First in First out queue (FIFO)
 ||
+|| When dealing with a linked list, remember that each node 
+|| has a its data, and the address of the next node, this is a 
+|| singly linked list, while a doubly linked list has an address to
+|| the previous node, address to the next node, and its data.
+||
+||
 || A queue can be though of like a line at a shopping center
 ||---------------------------------------------------
 
