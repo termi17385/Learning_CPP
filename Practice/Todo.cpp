@@ -57,7 +57,7 @@ void Todo::run()
 			std::cout << std::endl;
 		}
 
-		else if (ans == "E" || ans == "e") running = false;
+		else if (ans == "E" || ans == "e" || todoList.size() <= 0) running = false;
 
 	} while (running);
 }
