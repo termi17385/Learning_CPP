@@ -130,10 +130,12 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Queue.cpp" />
     <ClCompile Include="QueueExample.cpp" />
+    <ClCompile Include="Todo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Queue.h" />
     <ClInclude Include="QueueExample.h" />
+    <ClInclude Include="Todo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

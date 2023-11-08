@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Queue.h"
 #include "QueueExample.h"
+#include "Todo.h"
 
 /*
     Templates can be used to make "generic" functions or classes
@@ -32,12 +33,17 @@ auto max(T x, U y)
     return (x > y) ? x : y;
 }
 
-
 int main()
 {
     std::cout << "Template Test" << std::endl;
     std::cout << max(4.2f, 2) << std::endl;     // float and int
     std::cout << max('4', '7') << std::endl;    // characters
     
+    std::cout << std::endl;
+
+    Todo t;
+
+    t.run();
+
     return 0;
 }
