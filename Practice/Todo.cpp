@@ -2,9 +2,10 @@
 
 #include<fstream>
 
-TodoData::TodoData(std::string _todoDescription)
+TodoData::TodoData(std::string _todoDescription, bool status = false)
 {
 	todoDescription = _todoDescription;
+	completed = status;
 }
 
 void Todo::run()
@@ -32,17 +33,15 @@ void Todo::run()
 
 		std::cout << std::endl;
 
+		// I hate cin :(
+
 		if (ans == "CE" || ans == "ce") createEntry();
 		if (ans == "EE" || ans == "ee")
 		{ 
 			size_t position;
-			
 			std::cout << "Which Entry do you want to edit? (num): ";
-
 			std::cin >> position;
-
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Clear out the input buffer.
-			
 			editEntry(position); 
 
 			std::cout << std::endl;
@@ -50,13 +49,9 @@ void Todo::run()
 		if (ans == "RE" || ans == "re")
 		{
 			size_t position;
-			
 			std::cout << "Which Entry do you want to remove? (num): ";
-			
 			std::cin >> position;
-			
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Clear out the input buffer.
-
 			removeEntry(position);
 			
 			std::cout << std::endl;
@@ -110,19 +105,16 @@ void Todo::removeEntry(size_t _position)
 
 void Todo::editEntry(size_t _position)
 {
-	std::string ans;
-	
-	TodoData* ptr = &todoList[_position];
-	
+	TodoData* ptr = &todoList[_position]; // pointer so we can actually modify the object
 	std::cout << "Edit Description (ED), Change Completetion Status (CS) or Exit (E): ";
-	
+		
+	std::string ans;
 	std::getline(std::cin, ans);
 
 	if (ans == "ED" || ans == "ed") ptr->todoDescription = getEntryDescription();
-	
 	else if (ans == "CS" || ans == "cs") ptr->completed = !ptr->completed;
 	
-	todoList[_position] = *ptr;
+	todoList[_position] = *ptr; // make sure the object is actually modified (probably redundant)
 }
 
 
@@ -150,10 +142,34 @@ void Todo::saveEntries()
 
 void Todo::readEntries()
 {
+	std::string line;
+	std::ifstream file(FILE_NAME);
+	std::cout << std::endl;
 	
+	char delim = ',';
+
+	// while words exist in the file
+	while (std::getline(file, line))
+	{
+		// get the position of the delim
+		int position = line.find(delim);
+		std::string desc = line.substr(0, position); // get the text, before the delim, we know it is a description
+		line.erase(0, position + 1); // erase the text and delim
+		bool status = std::stoi(line); // convert the last piece of text back to boolean
+
+		// add new entry to list
+		TodoData t(desc, status);
+		todoList.push_back(t);
+	}
+
+	file.close();
 }
 
 Todo::~Todo()
 {
+	// Destructor, called at the end of the life
+	// of this object
+
+	// being used to save data at the end
 	saveEntries();
 }

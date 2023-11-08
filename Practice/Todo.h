@@ -5,12 +5,25 @@
 
 const std::string FILE_NAME = "List.td";
 
+/*
+||-------------------------------------------------
+|| Todo List Project
+||
+|| This program is mostly for reminding how the file streams work,
+|| and delims, substr, find and erase.
+||
+|| Basic use of pointers and file stream
+||
+||---------------------------------------------------*/
+
+
+
 struct TodoData
 {
 	std::string todoDescription = "";
 	bool completed = false;
 
-	TodoData(std::string);
+	TodoData(std::string, bool status);
 };
 
 class Todo
@@ -32,7 +45,6 @@ private:
 
 	std::vector<TodoData> todoList;
 
-	TodoData* getEntry(size_t _index) { return &todoList[_index]; }
 	std::string getEntryDescription();	// description of TodoData Entry (the task)
 
 	void createEntry();	

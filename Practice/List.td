@@ -1,3 +1,2 @@
-Clean Room,0
-Do Washing,1
-Finish Projects,0
+Hello World,0
+Clean Room,1
