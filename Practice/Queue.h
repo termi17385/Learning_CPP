@@ -13,6 +13,10 @@
 || A queue can be though of like a line at a shopping center
 ||---------------------------------------------------
 
+
+	**** SHOULD NOTE THAT STL (namespace std;) does contain a queue and priority queue, and this is just **** 
+	**** for learning a usecase for Linked Lists, and ways to use templates :) **** 
+
 	< not entirely sure how inline works yet, but I know it is required >
 	< when dealing with templates.										>
 
