@@ -13,24 +13,42 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\Queue">
+      <UniqueIdentifier>{10a176bd-6603-4f11-8f1e-fb115aa86008}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Queue">
+      <UniqueIdentifier>{f300054a-c8ad-41c1-9b82-6da944acd42c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TodoList">
+      <UniqueIdentifier>{51d4d357-dcba-4e62-b8e3-af6038ef008c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TodoList">
+      <UniqueIdentifier>{80b4aa45-06f3-49b8-be7f-a785d725e2e5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Queue.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="QueueExample.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Queue</Filter>
+    </ClCompile>
+    <ClCompile Include="Queue.cpp">
+      <Filter>Source Files\Queue</Filter>
+    </ClCompile>
+    <ClCompile Include="Todo.cpp">
+      <Filter>Source Files\TodoList</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Queue.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="QueueExample.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Queue</Filter>
+    </ClInclude>
+    <ClInclude Include="Queue.h">
+      <Filter>Header Files\Queue</Filter>
+    </ClInclude>
+    <ClInclude Include="Todo.h">
+      <Filter>Header Files\TodoList</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
