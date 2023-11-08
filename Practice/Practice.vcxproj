@@ -128,11 +128,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MapExample.cpp" />
     <ClCompile Include="Queue.cpp" />
     <ClCompile Include="QueueExample.cpp" />
     <ClCompile Include="Todo.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="MapExample.h" />
     <ClInclude Include="Queue.h" />
     <ClInclude Include="QueueExample.h" />
     <ClInclude Include="Todo.h" />

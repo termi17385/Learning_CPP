@@ -2,6 +2,7 @@
 #include "Queue.h"
 #include "QueueExample.h"
 #include "Todo.h"
+#include "MapExample.h"
 
 /*
     Templates can be used to make "generic" functions or classes
@@ -33,17 +34,84 @@ auto max(T x, U y)
     return (x > y) ? x : y;
 }
 
+void runTemplateSample(char& _ans);
+void runTodoListSample(char& _ans);
+void runQueueSamples(char& _ans);
+
 int main()
 {
-    std::cout << "Template Test" << std::endl;
-    std::cout << max(4.2f, 2) << std::endl;     // float and int
-    std::cout << max('4', '7') << std::endl;    // characters
-    
+    char ans = ' ';
+
+    runTemplateSample(ans);
+
+    runTodoListSample(ans);
+
+    runQueueSamples(ans);
+
+
+    MapExample m;
+
+    do
+    {
+        m.displayLevel();
+
+    } while (m.isPlaying());
+    return 0;
+}
+
+void runTemplateSample(char& _ans)
+{
+    std::cout << "Do you want to run template test? (Y/N): ";
+    std::cin >> _ans;
+
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // C++ you're weird, doing this because sometimes cin breaks :)
+
     std::cout << std::endl;
 
-    Todo t;
+    if (_ans == 'y' || _ans == 'Y')
+    {
 
-    t.run();
+        std::cout << "Template Test" << std::endl;
+        std::cout << max(4.2f, 2) << std::endl;     // float and int
+        std::cout << max('4', '7') << std::endl;    // characters
 
-    return 0;
+        std::cout << std::endl;
+    }
+}
+
+void runTodoListSample(char& _ans)
+{
+    std::cout << "Do you want to run Todo list test? (Y/N): ";
+    std::cin >> _ans;
+
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+    if (_ans == 'y' || _ans == 'Y')
+    {
+        Todo t;
+
+        t.run();
+
+        std::cout << std::endl;
+    }
+}
+
+void runQueueSamples(char& _ans)
+{
+    std::cout << std::endl;
+    std::cout << "Do you want to run Queue test? (Y/N): ";
+    std::cin >> _ans;
+
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+    if (_ans == 'y' || _ans == 'Y')
+    {
+        QueueExample q;
+        q.integerQueue();
+        q.personQueue();
+        q.stringQueue();
+        q.testQueues();
+
+        std::cout << std::endl;
+    }
 }

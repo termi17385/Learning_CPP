@@ -25,6 +25,12 @@
     <Filter Include="Header Files\TodoList">
       <UniqueIdentifier>{80b4aa45-06f3-49b8-be7f-a785d725e2e5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\MapExample">
+      <UniqueIdentifier>{a711893b-8751-4f4e-ae2f-556e0152ea48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\MapExample">
+      <UniqueIdentifier>{cd28b689-f74f-4541-a9aa-b22834e6b386}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -39,6 +45,9 @@
     <ClCompile Include="Todo.cpp">
       <Filter>Source Files\TodoList</Filter>
     </ClCompile>
+    <ClCompile Include="MapExample.cpp">
+      <Filter>Source Files\MapExample</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="QueueExample.h">
@@ -49,6 +58,9 @@
     </ClInclude>
     <ClInclude Include="Todo.h">
       <Filter>Header Files\TodoList</Filter>
+    </ClInclude>
+    <ClInclude Include="MapExample.h">
+      <Filter>Header Files\MapExample</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
